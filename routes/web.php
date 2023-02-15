@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\SiginController;
+use App\Http\Controllers\FormredController;
 
 
 /*
@@ -25,6 +26,8 @@ Route::get('/', function () {return view('index');});
 Route::get('/login', [SiginController::class,'login'])->name('login');
 Route::get('/signup', [SiginController::class,'signup'])->name('signup');
 
+
+/*////----------PROGRAM----------////*/
 /*MAIN FORM*/
 Route::get('/forms/program', [FormController::class,'form'])->name('form');
 
@@ -37,3 +40,7 @@ Route::post('/forms/createprogram', [FormController::class,'createprogram'])->na
 //EDIT
 Route::get('forms/edit/{program}', [FormController::class,'view'])->name('edit.prog');
 Route::put('forms/updateprogram/{program}', [FormController::class,'updateprogram'])->name('updateprogram');
+
+/*////----------RED----------////*/
+
+Route::get('/forms/red', [FormredController::class,'form'])->name('redform');

@@ -80,9 +80,7 @@ class FormController extends Controller
         $program->Estado=$request->status;
         $program->Nivel_formacion=$request->level;
         $program->Duracion=$request->duration;
-        $program->Version=$request->version;
-        $program->Codigo_centro=$request->centro_codigo;
-        $program->Codigo_area=$request->Codigo_area;
+        $program->Version=$request->version;        
         $program->save();        
          return redirect()->route('form');
     }  

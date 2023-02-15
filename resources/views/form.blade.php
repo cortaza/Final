@@ -2,6 +2,12 @@
 @section('title','forms')
 @section('content')
 <div class="col-md-8">
+<br>    
+    <div>        
+        <button href="" class="btn btn-info">Programas</button>
+        <a href="{{route('redform')}}" class="btn btn-info">Red</a>
+    </div>
+<br>
                             <table class="table" >
                                 <thead class="table-success table-striped" >
                                     <tr>
