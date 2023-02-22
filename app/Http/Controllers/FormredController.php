@@ -10,7 +10,7 @@ class FormredController extends Controller
 {
     public function form(){        
         $redtematica=RedTematica::all();       
-        return view('red/form', ['redtematica'=>$redtematica]);
+        return view('red/form', ['redstematica'=>$redtematica]);
     }
 
     /*DELETE 1*/

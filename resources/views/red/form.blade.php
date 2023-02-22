@@ -1,121 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programas</title>
-</head>
-    <body>
-        <div id="Pagina">
-            <table width="100%" border="0">
-                <caption>
-                    Programas de Formacion
-                </caption>
-                <tr>
-                    <th scope="col" class="elements">Codigo</th>
-                    <th scope="col" class="elements">Nombre</th>
-                    <th scope="col" class="elements">Estado</th>
-                    <th scope="col" class="elements">Nivel Formacion</th>
-                    <th scope="col" class="elements">Duracion</th>
-                    <th scope="col" class="elements">Version</th>
-                    <th scope="col" class="elements">Codigo Centro</th>
-                    <th scope="col" class="elements">Area</th>
-                    <th scope="col" class="elements">Accion</th>
-                </tr>
-                <tr class="odd">
-                    <td>228106</td>
-                    <td>ADSI (Analisis y Desarrollo de Sistemas de Informacion)</td>
-                    <td>Activo</td>
-                    <td>Tecnologo</td>
-                    <td>24 meses</td>
-                    <td>101</td>
-                    <td>23471927</td>
-                    <td>1</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>228118</td>
-                    <td>ADSO (Analisis y Desarrollo de Software)</td>
-                    <td>Activo</td>
-                    <td>Tecnologo</td>
-                    <td>3984 horas</td>
-                    <td>1</td>
-                    <td>23471927</td>
-                    <td>1</td>
-                    <td></td>
-                </tr>
-                <tr class="odd">
-                    <td>233104</td>
-                    <td>Programacion de Software</td>
-                    <td>Activo</td>
-                    <td>tecnico</td>
-                    <td>2208 horas</td>
-                    <td>1</td>
-                    <td>23471927</td>
-                    <td>1</td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-    </body>
-</html>
+@extends('layouts.structure')
+@section('title','Formulario Red')
+@section('content')
+<div class="col-md-8">
+<br>    
+    <div>        
+        @include('partials.selectform')       
+    </div>
+<br>
+                            <table class="table" >
+                                <thead class="table-success table-striped" >
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Nombre</th>                                        
+                                        <th colspan="2"><center>Acción</center></th>                                    
+                                    </tr>
+                                </thead>
 
-<style type="text/css">
+                                <tbody>
+                                    @forelse($redstematica as $redtematica)                                         
+                                    <tr>
+                                        <th>{{$redtematica->Codigo_red}}</th>
+                                        <th>{{$redtematica->Nombre}}</th>                                                                                
+                                        <th>
+                                            <a href="{{route('edit.prog', $redtematica->Codigo_red )}}" class="btn btn-info">Editar</a> 
+                                            <!--DELETE REGISTERS-->
+                                            {{-- <form action="{{route('edit.prog', $programa->codigo_prog )}}" method="GET">
+                                                @csrf                                                                                                
+                                                <button type="submit" class="btn btn-info">Editar</button>
+                                            </form>                                             --}}
+                                        </th>
+                                        <th>
+                                            <!--DELETE REGISTERS-->
+                                            <form action="{{route('programs.destroy', $redtematica->Codigo_red )}}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-danger">Eliminar</button>                                                
+                                            </form>                                            
+                                        </th>
+                                    </tr>
+                                    @empty
+                                        <tr>
+                                            <th><h3>No hay programas</h3></th>
+                                        </tr>
+                                    @endforelse                                    
+                                    
+                                </tbody>                            
+                                <br>
 
-body {
-    color: #000;
-    margin-top: 10px;
-    background: #efefef;
-    font-family: Helvetica, Arial, sans-serif;
-    text-align: center;
-}
-
-#page {
-    width: 600px;
-    text-align: left;
-    margin: 0 auto;
-    padding: 2em;
-    background: #fff;
-}
-
-/* the table */
-
-table {
-    width: 100%;
-    border: 2px solid #000;
-    border-collapse: collapse;
-    caption-side: top;
-}
-
-th, td {
-    width: 25%;
-    text-align: center;
-    vertical-align: top;
-    border: 2px solid #000;
-    padding: 0.7em;
-}
-
-caption {
-    padding: 0.3em;
-    color: #fff;
-    background: #000;
-}
-
-th {
-    background: #5eb319 ;
-}
-
-td {
-    background: #ccc;
-}
-
-.odd td {
-    background: #fff;
-}
-
-.elements {
-    width: 30%;
-}
-
-</style>
+                            </table>
+                        </div>      
+                        <br>             
+                        <br>
+                        <div>
+                            <a href="{{route('create')}}" class="btn btn-info" style="background-color:green; border-color:green;">Crear</a> 
+                        </div>
+@endsection
