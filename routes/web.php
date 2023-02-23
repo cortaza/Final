@@ -5,6 +5,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\SiginController;
 use App\Http\Controllers\FormredController;
 use App\Http\Controllers\FormareaController;
+use App\Http\Controllers\InstructorController;
 
 /*PAGINA INICIAL*/
 Route::get('/', function () {return view('index');});
@@ -41,26 +42,43 @@ Route::controller(FormredController::class)->group(function(){
     /*PROGRAM FORM*/    
     Route::get('/forms/red','form')->name('redform');
     /*DELETE */
-    Route::delete('/deletered/{deleteprogram}','destroy')->name('programs.destroy');    
+    Route::delete('/deletered/{deletered}','destroy')->name('red.destroyred');    
     //create
-    Route::get('/forms/program/createred','create')->name('create');
-    Route::post('/forms/createprogram','createprogram')->name('createProgram');        
+    Route::get('/forms/red/create','create')->name('createred');
+    Route::post('/forms/createred','createred')->name('createtered');        
     //EDIT
-    Route::get('forms/editred/{program}','view')->name('edit.prog');
-    Route::put('forms/updateprogram/{program}','updateprogram')->name('updateprogram');
+    Route::get('forms/editred/{red}','view')->name('edit.redt');
+    Route::put('forms/updatered/{red}','updatered')->name('updatered');
 });
+
 
 /*AREA*/
 
 Route::controller(FormareaController::class)->group(function(){
-    /*PROGRAM FORM*/    
-    Route::get('/forms/area','form')->name('areaform');
+    /*AREA FORM*/    
+    Route::get('/forms/area','formarea')->name('areaform');
     /*DELETE */
-    Route::delete('/deletered/{deleteprogram}','destroy')->name('programs.destroy');    
+    Route::delete('/area/delete/{deletearea}','destroy')->name('area.destroy');    
     //create
-    Route::get('/forms/program/createred','create')->name('create');
-    Route::post('/forms/createprogram','createprogram')->name('createProgram');        
+    Route::get('/forms/area/createarea','create')->name('createarea');
+    Route::post('/forms/createarea','createarea')->name('createarea');        
     //EDIT
-    Route::get('forms/editred/{program}','view')->name('edit.prog');
-    Route::put('forms/updateprogram/{program}','updateprogram')->name('updateprogram');
+    Route::get('forms/area/{area}','view')->name('area.edit');
+    Route::put('forms/updatearea/{area}','updatearea')->name('updatearea');
+});
+
+
+/*INSTRUCTOR*/
+
+Route::controller(InstructorController::class)->group(function(){
+    /*PROGRAM FORM*/    
+    Route::get('/forms/instructor','formin')->name('instrucform');
+    /*DELETE */
+    Route::delete('/instructor/delete/{deleteinstructor}','destroy')->name('instructor.destroy');    
+    //create
+    Route::get('/forms/instructor/create','create')->name('create');
+    Route::post('/forms/createinstructor','createinstructor')->name('createinstructor');
+    //EDIT
+    Route::get('forms/instructor/{instructor}','view')->name('instructor.edit');
+    Route::put('forms/updateinstructor/{instructor}','updateinstructor')->name('updateinstructor');
 });

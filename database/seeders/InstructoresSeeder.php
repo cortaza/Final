@@ -22,9 +22,9 @@ class InstructoresSeeder extends Seeder
         $Instructor1->Telefono=('1111111111');
         $Instructor1->Correo=('acnv@misena.edu.co');
         $Instructor1->Estado=('1');
+        $Instructor1->Tipo_contrato=('Planta');
         $Instructor1->Codigo_red=('1');
         $Instructor1->Codigo_area=('1');
-        $Instructor1->Codigo_contrato=('2');
         $Instructor1->save();
         
         $Instructor2=new Instructor();
@@ -34,9 +34,9 @@ class InstructoresSeeder extends Seeder
         $Instructor2->Telefono=('2222222222');
         $Instructor2->Correo=('naespitia@sena.edu.co');
         $Instructor2->Estado=('1');
+        $Instructor2->Tipo_contrato=('Planta');
         $Instructor2->Codigo_red=('1');
         $Instructor2->Codigo_area=('1');
-        $Instructor2->Codigo_contrato=('2');
         $Instructor2->save();
         
         $Instructor3=new Instructor();
@@ -46,9 +46,9 @@ class InstructoresSeeder extends Seeder
         $Instructor3->Telefono=('3333333333');
         $Instructor3->Correo=('spadilla@sena.edu.co');
         $Instructor3->Estado=('1');
+        $Instructor3->Tipo_contrato=('Planta');
         $Instructor3->Codigo_red=('1');
         $Instructor3->Codigo_area=('1');
-        $Instructor3->Codigo_contrato=('2');
         $Instructor3->save();
         
         // $Instructor4=new Instructor();

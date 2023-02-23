@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class RedTematica extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'Codigo_red';
 }

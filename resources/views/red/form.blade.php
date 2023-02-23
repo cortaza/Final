@@ -17,12 +17,12 @@
                                 </thead>
 
                                 <tbody>
-                                    @forelse($redstematica as $redtematica)                                         
+                                    @forelse($redstematica as $red)                                         
                                     <tr>
-                                        <th>{{$redtematica->Codigo_red}}</th>
-                                        <th>{{$redtematica->Nombre}}</th>                                                                                
+                                        <th>{{$red->Codigo_red}}</th>
+                                        <th>{{$red->Nombre}}</th>                                                                                
                                         <th>
-                                            <a href="{{route('edit.prog', $redtematica->Codigo_red )}}" class="btn btn-info">Editar</a> 
+                                            <a href="{{route('edit.redt', $red->Codigo_red )}}" class="btn btn-info">Editar</a> 
                                             <!--DELETE REGISTERS-->
                                             {{-- <form action="{{route('edit.prog', $programa->codigo_prog )}}" method="GET">
                                                 @csrf                                                                                                
@@ -31,7 +31,7 @@
                                         </th>
                                         <th>
                                             <!--DELETE REGISTERS-->
-                                            <form action="{{route('programs.destroy', $redtematica->Codigo_red )}}" method="POST">
+                                            <form action="{{route('red.destroyred', $red->Codigo_red )}}" method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger">Eliminar</button>                                                
@@ -52,6 +52,6 @@
                         <br>             
                         <br>
                         <div>
-                            <a href="{{route('create')}}" class="btn btn-info" style="background-color:green; border-color:green;">Crear</a> 
+                            <a href="{{route('createred')}}" class="btn btn-info" style="background-color:green; border-color:green;">Crear</a> 
                         </div>
 @endsection

@@ -100,7 +100,7 @@
         <option selected="" disabled="" placeholder=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Elegir...</font></font></option>
         @foreach ($areas as $area)
           <option>{{$area->Codigo_area}}</option>    
-        @endforeach          
+        @endforeach         
       </select>
       <div class="invalid-feedback">
         Please select a valid state.

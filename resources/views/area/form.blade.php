@@ -53,7 +53,7 @@
                         </div>      
                         <br>             
                         <br>
-                        <div>
+                        <div> 
                             <a href="{{route('create')}}" class="btn btn-info" style="background-color:green; border-color:green;">Crear</a> 
                         </div>
 @endsection

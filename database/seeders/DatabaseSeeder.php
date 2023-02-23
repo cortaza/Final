@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([Red_TematicasSeeder::class]);
         $this->call([Area_TematicasSeeder::class]);
-        $this->call([Tipo_ContratosSeeder::class]);
         $this->call([InstructoresSeeder::class]);
         $this->call([AdministracionsSeeder::class]);
         $this->call([CentroFormacionsSeeder::class]);

@@ -20,12 +20,11 @@ return new class extends Migration
             $table->bigInteger('Telefono');
             $table->text('Correo');
             $table->boolean('Estado');
+            $table->string('Tipo_contrato');
             $table->unsignedBigInteger('Codigo_red');
             $table->foreign('Codigo_red')->references('Codigo_red')->on('red_tematicas');  
             $table->unsignedBigInteger('Codigo_area');
             $table->foreign('Codigo_area')->references('Codigo_area')->on('area_tematicas');  
-            $table->unsignedBigInteger('Codigo_contrato');
-            $table->foreign('Codigo_contrato')->references('Codigo_contrato')->on('tipo_contratos');  
             $table->timestamps();
         });
     }

@@ -17,12 +17,12 @@ class FormController extends Controller
 
     /*CREATE 1*/
     public function create(){        
-        $centro=CentroFormacion::all();
+        $centros=CentroFormacion::all();
         $programas=Programa::all();      
-        $area=AreaTematica::all();
+        $areas=AreaTematica::all();
         return view('create', ['programs'=>$programas,
-                                'centros'=>$centro,
-                            'areas'=>$area]);
+                                'centros'=>$centros,
+                                'areas'=>$areas]);
     }
 
     public function destroy($deleteprogram){

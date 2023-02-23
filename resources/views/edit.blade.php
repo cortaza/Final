@@ -1,4 +1,3 @@
-
 @extends('layouts.structure')
 @section('title','edit')
 @section('content')
